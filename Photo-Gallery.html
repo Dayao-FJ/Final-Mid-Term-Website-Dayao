@@ -1,0 +1,519 @@
+<UPDATED_CODE><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" type="text/css" href="CSS files/Overall-Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Gallery specific styles */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .gallery-intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-intro h1 {
+            color: #49225B;
+            margin-bottom: 10px;
+        }
+        
+        .gallery-intro p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .gallery-nav {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .gallery-nav-item {
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #49225B;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-nav-item:hover {
+            background-color: #5a2973;
+            transform: translateY(-3px);
+        }
+        
+        .gallery-section {
+            margin-bottom: 60px;
+        }
+        
+        .section-header {
+            position: relative;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .section-header h2 {
+            display: inline-block;
+            background-color: #f8f6f3;
+            padding: 0 20px;
+            color: #49225B;
+            position: relative;
+            z-index: 1;
+            text-indent: 0;
+        }
+        
+        .section-header::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #49225B;
+            z-index: 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 2/3;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(73, 34, 91, 0.85);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .gallery-item:hover .gallery-info {
+            transform: translateY(0);
+        }
+        
+        .gallery-info h3 {
+            margin: 0 0 5px 0;
+            font-size: 1rem;
+            text-align: left;
+        }
+        
+        .gallery-info p {
+            margin: 0;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #49225B;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            opacity: 0.8;
+            z-index: 1000;
+        }
+        
+        .back-to-top:hover {
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+        
+        @media (max-width: 1200px) {
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<div class="header" id="Top-header">
+    <div class="buttons">
+        <a href="index.html" class="btn" title="Home">
+            <i class="fas fa-home btn-icon"></i>
+            <span>Home</span>
+        </a>
+        <a href="About-Me.html" class="btn" title="About Me">
+            <i class="fas fa-user btn-icon"></i>
+            <span>About</span>
+        </a>
+        <a href="Skills-Interest-Hobbies.html" class="btn" title="Skills">
+            <i class="fas fa-brain btn-icon"></i>
+            <span>Skills</span>
+        </a>
+        <a href="Resume.html" class="btn" title="Resume">
+            <i class="fas fa-file-alt btn-icon"></i>
+            <span>Resume</span>
+        </a>
+        <a href="Photo-Gallery.html" class="btn active" title="Gallery">
+            <i class="fas fa-images btn-icon"></i>
+            <span>Gallery</span>
+        </a>
+        <a href="My-Beats.html" class="btn" title="Music">
+            <i class="fas fa-music btn-icon"></i>
+            <span>Beats</span>
+        </a>
+        <a href="Film-Movies.html" class="btn" title="Movies">
+            <i class="fas fa-film btn-icon"></i>
+            <span>Movies</span>
+        </a>
+        <a href="Film-Series.html" class="btn" title="Series">
+            <i class="fas fa-tv btn-icon"></i>
+            <span>Series</span>
+        </a>
+        <a href="Dream-Vacation.html" class="btn" title="Destinations">
+            <i class="fas fa-plane btn-icon"></i>
+            <span>Dreams</span>
+        </a>
+        <a href="Bucket-List.html" class="btn" title="Bucket List">
+            <i class="fas fa-list-check btn-icon"></i>
+            <span>Bucket</span>
+        </a>
+    </div>
+</div>
+
+<body>
+    <div class="gallery-container">
+        <div class="gallery-intro">
+            <h1>My Personal Gallery</h1>
+            <p>A collection of photos showcasing my everyday life, hobbies, and interests</p>
+        </div>
+        
+        <div class="gallery-nav">
+            <a href="#cooking" class="gallery-nav-item">
+                <i class="fas fa-utensils"></i> My Cooks
+            </a>
+            <a href="#cards" class="gallery-nav-item">
+                <i class="fas fa-clone"></i> Card Collections
+            </a>
+            <a href="#cat" class="gallery-nav-item">
+                <i class="fas fa-cat"></i> My Cat
+            </a>
+            <a href="#books" class="gallery-nav-item">
+                <i class="fas fa-book"></i> Book Collections
+            </a>
+        </div>
+
+        <div class="hero-image-container">
+            <a href="Images/gallery.jpg">
+                <img src="Images/gallery.jpg" alt="Collection of Francis's photos through the years" class="hero-image">
+            </a>
+        </div>  
+        
+        <!-- Cooking Section -->
+        <div id="cooking" class="gallery-section">
+            <div class="section-header">
+                <h2>My Cooks</h2>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Food-1.jpg">
+                        <img src="Images/Image-Dump/Food-1.jpg" alt="Ramen">
+                        <div class="gallery-info">
+                            <h3>Homemade Ramen</h3>
+                            <p>My fancier Instant Ramen Pack</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Food-2.jpg">
+                        <img src="Images/Image-Dump/Food-2.jpg" alt="Potato Pancakes">
+                        <div class="gallery-info">
+                            <h3>Failed</h3>
+                            <p>Failed Hashbrown to Potato Pancakes</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Food-3.jpg">
+                        <img src="Images/Image-Dump/Food-3.jpg" alt="Tuna Mayo Sandwich">
+                        <div class="gallery-info">
+                            <h3>Broke College Food</h3>
+                            <p>Tuna Mayo Sandwich for breakfast</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Food-4.jpg">
+                        <img src="Images/Image-Dump/Food-4.jpg" alt="Chicken Mushroom">
+                        <div class="gallery-info">
+                            <h3>Holiday Lunch</h3>
+                            <p>Cheesy Chicken Mushroom</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Food-5.jpg">
+                        <img src="Images/Image-Dump/Food-5.jpg" alt="Egg dropped">
+                        <div class="gallery-info">
+                            <h3>Plan B</h3>
+                            <p>I bought too much egg, so I made a soup.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card Collections Section -->
+        <div id="cards" class="gallery-section">
+            <div class="section-header">
+                <h2>My Card Collections</h2>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Card-1.jpg">
+                        <img src="Images/Image-Dump/Card-1.jpg" alt="One Piece Cards">
+                        <div class="gallery-info">
+                            <h3>Extra Broke</h3>
+                            <p>One Piece Set 5-10 in sight</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Card-2.jpg">
+                        <img src="Images/Image-Dump/Card-2.jpg" alt="Pokémon card collection">
+                        <div class="gallery-info">
+                            <h3>First Two</h3>
+                            <p>My special first two packs of Pokemon and One Piece packs</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Card-3.jpg">
+                        <img src="Images/Image-Dump/Card-3.jpg" alt="Cinderace">
+                        <div class="gallery-info">
+                            <h3>150 pesos pulled</h3>
+                            <p>Cinderace EX pulled!</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Card-4.jpg">
+                        <img src="Images/Image-Dump/Card-4.jpg" alt="One Piece card set">
+                        <div class="gallery-info">
+                            <h3>Trash pull</h3>
+                            <p>Koala, a revolutionary from One Piece. Meh.</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Card-5.jpg">
+                        <img src="Images/Image-Dump/Card-5.jpg" alt="Card display">
+                        <div class="gallery-info">
+                            <h3>Holy Grail</h3>
+                            <p>My 285 pesos turned to $137 real quick!</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Cat Section -->
+        <div id="cat" class="gallery-section">
+            <div class="section-header">
+                <h2>My Cat</h2>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Cat-1.jpg">
+                        <img src="Images/Image-Dump/Cat-1.jpg" alt="Cat">
+                        <div class="gallery-info">
+                            <h3>Woke Up From Peaceful Nap</h3>
+                            <p>Kalim is sight!</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Cat-2.jpg">
+                        <img src="Images/Image-Dump/Cat-2.jpg" alt="Cute Cat">
+                        <div class="gallery-info">
+                            <h3>Cute Time!</h3>
+                            <p>My baby Mikan squished between my lap</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Cat-3.jpg">
+                        <img src="Images/Image-Dump/Cat-3.jpg" alt="Cat being curious">
+                        <div class="gallery-info">
+                            <h3>Curious Explorer</h3>
+                            <p>Is this the camera?</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Cat-4.jpg">
+                        <img src="Images/Image-Dump/Cat-4.jpg" alt="Cat with me">
+                        <div class="gallery-info">
+                            <h3>Study Buddy</h3>
+                            <p>Kalim helping me study for finals. Lmao.</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Cat-5.jpg">
+                        <img src="Images/Image-Dump/Cat-5.jpg" alt="Cat birthday">
+                        <div class="gallery-info">
+                            <h3>Birthday Celebration</h3>
+                            <p>Mikan's first birthday with a tiny cat-safe cake</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Book Collections Section -->
+        <div id="books" class="gallery-section">
+            <div class="section-header">
+                <h2>My Book Collections</h2>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Book-1.jpg">
+                        <img src="Images/Image-Dump/Book-1.jpg" alt="Collection">
+                        <div class="gallery-info">
+                            <h3>Da Vinci Code</h3>
+                            <p>Book >>>> Movie!!</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Book-2.jpg">
+                        <img src="Images/Image-Dump/Book-2.jpg" alt="Programming books">
+                        <div class="gallery-info">
+                            <h3>NO space</h3>
+                            <p>Where to put?</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Book-3.jpg">
+                        <img src="Images/Image-Dump/Book-3.jpg" alt="EAP">
+                        <div class="gallery-info">
+                            <h3>Let me borrow this PLS!</h3>
+                            <p>Tales of Mystery and Imagination!</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Book-4.jpg">
+                        <img src="Images/Image-Dump/Book-4.jpg" alt="Mystery novels">
+                        <div class="gallery-info">
+                            <h3>Mystery Novels</h3>
+                            <p>Collection of mystery novels inspired by Sherlock Holmes</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="gallery-item">
+                    <a href="Images/Image-Dump/Book-5.jpg">
+                        <img src="Images/Image-Dump/Book-5.jpg" alt="Cousin's books">
+                        <div class="gallery-info">
+                            <h3>Please!!</h3>
+                            <p>Please lend me some books, lol</p>
+                        </div>
+                    </a>
+                </div>
+            </a>
+        </div>
+    </div>
+    <br>
+</div>
+
+</body>
+
+</html>

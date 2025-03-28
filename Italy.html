@@ -1,0 +1,435 @@
+<UPDATED_CODE><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Italy - Dream Destination</title>
+    <link rel="stylesheet" type="text/css" href="CSS files/Overall-Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .destination-header {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .destination-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8);
+        }
+        
+        .header-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .italy-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .destination-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .destination-section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            color: #49225B;
+            border-bottom: 2px solid #49225B;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-family: "Libre Baskerville", serif;
+        }
+        
+        .content-block {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+        
+        .content-block.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .content-image {
+            flex: 0 0 45%;
+        }
+        
+        .content-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+        
+        .content-image img:hover {
+            transform: scale(1.02);
+        }
+        
+        .content-text {
+            flex: 1;
+        }
+        
+        .content-text p {
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .highlight-box {
+            background-color: #f0eee9;
+            border-left: 4px solid #49225B;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box h3 {
+            color: #49225B;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .highlight-box p {
+            margin: 0;
+        }
+        
+        .dream-spots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .spot-card {
+            flex: 0 0 calc(33.333% - 20px);
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .spot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .spot-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .spot-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .spot-card:hover .spot-image img {
+            transform: scale(1.05);
+        }
+        
+        .spot-content {
+            padding: 20px;
+        }
+        
+        .spot-content h3 {
+            color: #49225B;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .spot-content p {
+            text-align: justify;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .italian-experiences {
+            margin-top: 40px;
+            background: linear-gradient(to right, #f8f6f3, #f0eee9);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .italian-experiences h3 {
+            color: #49225B;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .experience-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .experience-icon {
+            flex: 0 0 40px;
+            height: 40px;
+            background: #49225B;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .experience-text {
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content-block, .content-block.reverse {
+                flex-direction: column;
+            }
+            
+            .content-image {
+                flex: 0 0 100%;
+            }
+            
+            .spot-card {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+
+<div class="header" id="Top-header">
+    <div class="buttons">
+        <a href="index.html" class="btn" title="Home">
+            <i class="fas fa-home btn-icon"></i>
+            <span>Home</span>
+        </a>
+        <a href="About-Me.html" class="btn" title="About Me">
+            <i class="fas fa-user btn-icon"></i>
+            <span>About</span>
+        </a>
+        <a href="Skills-Interest-Hobbies.html" class="btn" title="Skills">
+            <i class="fas fa-brain btn-icon"></i>
+            <span>Skills</span>
+        </a>
+        <a href="Resume.html" class="btn" title="Resume">
+            <i class="fas fa-file-alt btn-icon"></i>
+            <span>Resume</span>
+        </a>
+        <a href="Photo-Gallery.html" class="btn" title="Gallery">
+            <i class="fas fa-images btn-icon"></i>
+            <span>Gallery</span>
+        </a>
+        <a href="My-Beats.html" class="btn" title="Music">
+            <i class="fas fa-music btn-icon"></i>
+            <span>Beats</span>
+        </a>
+        <a href="Film-Movies.html" class="btn" title="Movies">
+            <i class="fas fa-film btn-icon"></i>
+            <span>Movies</span>
+        </a>
+        <a href="Film-Series.html" class="btn" title="Series">
+            <i class="fas fa-tv btn-icon"></i>
+            <span>Series</span>
+        </a>
+        <a href="Dream-Vacation.html" class="btn active" title="Destinations">
+            <i class="fas fa-plane btn-icon"></i>
+            <span>Dreams</span>
+        </a>
+        <a href="Bucket-List.html" class="btn" title="Bucket List">
+            <i class="fas fa-list-check btn-icon"></i>
+            <span>Bucket</span>
+        </a>
+    </div>
+</div>
+
+<body>
+    <div class="destination-container">
+        <div class="destination-header">
+            <img src="Images/Destinations/Italy/italy-banner.jpg" alt="Beautiful Italian landscape with Tuscany hills">
+            <div class="header-content">
+                <h1>Italy: La Dolce Vita</h1>
+                <p>A journey through ancient history, artistic masterpieces, and culinary excellence</p>
+            </div>
+        </div>
+        
+        <div class="destination-section">
+            <h2 class="section-title">Why Italy Captures My Imagination</h2>
+            
+            <div class="content-block">
+                <div class="content-image">
+                    <a href="Images/Destinations/Italy/colosseum.jpg">
+                        <img src="Images/Destinations/Italy/colosseum.jpg" alt="The Colosseum in Rome">
+                    </a>
+                </div>
+                <div class="content-text">
+                    <p>Italy has always fascinated me with its rich history, artistic heritage, and world-renowned cuisine. As someone who appreciates culture, architecture, and culinary experiences, visiting Italy would be a dream come true. From the ancient ruins of Rome to the romantic canals of Venice, Italy offers a perfect blend of historical significance and modern charm.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Cradle of Civilization</h3>
+                        <p>Italy is home to more UNESCO World Heritage Sites than any other country in the world, with 58 recognized locations. This makes it a living museum where history comes alive at every corner.</p>
+                    </div>
+                    
+                    <p>One of the main reasons I want to visit Italy is to explore its incredible historical sites. The Colosseum and Roman Forum in Rome, where gladiators once fought and emperors ruled, represent the grandeur of the ancient Roman Empire. Walking through these ruins would be like stepping back in time, allowing me to connect with a civilization that shaped much of Western culture.</p>
+                </div>
+            </div>
+            
+            <div class="content-block reverse">
+                <div class="content-image">
+                    <a href="Images/Destinations/Italy/venice.jpg">
+                        <img src="Images/Destinations/Italy/venice.jpg" alt="Canals of Venice">
+                    </a>
+                </div>
+                <div class="content-text">
+                    <p>Another reason I'm drawn to Italy is its artistic treasures. Florence, the birthplace of the Renaissance, houses masterpieces by Michelangelo, Leonardo da Vinci, and Botticelli. I dream of standing before Michelangelo's David and gazing up at the magnificent dome of Florence Cathedral. The Vatican Museums in Rome, with the Sistine Chapel's breathtaking ceiling painted by Michelangelo, represent another artistic pilgrimage I long to make.</p>
+                    
+                    <p>Venice, with its unique network of canals and absence of cars, offers a magical experience unlike any other city. The idea of riding in a gondola along the Grand Canal, passing by centuries-old palaces and under historic bridges, seems like something from a fairy tale. I would love to get lost in Venice's narrow streets, discover hidden squares, and experience the romantic atmosphere that has inspired poets and artists for generations.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>City of Canals</h3>
+                        <p>Venice is built on 118 small islands connected by over 400 bridges, with water transportation serving as the primary means of getting around. This unique urban design creates a dreamlike atmosphere that has captivated visitors for centuries.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <div class="content-text">
+                    <p>Italian cuisine is another major draw for me. Each region of Italy has its own culinary traditions, from the seafood of Sicily to the risottos of Lombardy. I dream of enjoying authentic pasta carbonara in Rome, savoring fresh pizza in Naples (where it was invented), and indulging in gelato while strolling through Italian piazzas. Learning about the importance of fresh, local ingredients in Italian cooking would be both educational and delicious.</p>
+                    
+                    <p>The diverse landscapes of Italy also captivate me. From the rolling hills of Tuscany with their vineyards and olive groves to the dramatic Amalfi Coast with its colorful cliffside villages, Italy offers stunning natural beauty. I would love to explore the picturesque towns of Cinque Terre, hike in the Dolomites, and relax on the beaches of Sardinia.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Culinary Paradise</h3>
+                        <p>Italian cuisine is based on the Mediterranean diet, considered one of the healthiest in the world. The emphasis on fresh ingredients, regional specialties, and time-honored techniques has made Italian food beloved globally.</p>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <img src="Images/Destinations/Italy/italian-food.jpg" alt="Authentic Italian cuisine">
+                </div>
+            </div>
+        </div>
+        
+        <div class="destination-section">
+            <h2 class="section-title">My Dream Spots in Italy</h2>
+            
+            <div class="dream-spots">
+                <div class="spot-card">
+                    <div class="spot-image">
+                        <a href="Images/Destinations/Italy/rome.jpg">
+                            <img src="Images/Destinations/Italy/rome.jpg" alt="Ancient Rome">
+                        </a>
+                    </div>
+                    <div class="spot-content">
+                        <h3>Rome: The Eternal City</h3>
+                        <p>As the capital of the ancient Roman Empire and modern Italy, Rome offers an unparalleled journey through history. From the Colosseum and Roman Forum to the Pantheon and Trevi Fountain, the city is a living museum. I dream of exploring its ancient ruins, magnificent churches, and lively piazzas while enjoying authentic Roman cuisine.</p>
+                    </div>
+                </div>
+                
+                <div class="spot-card">
+                    <div class="spot-image">
+                        <a href="Images/Destinations/Italy/florence.jpg">
+                            <img src="Images/Destinations/Italy/florence.jpg" alt="Florence and the Duomo">
+                        </a>
+                    </div>
+                    <div class="spot-content">
+                        <h3>Florence: Renaissance Jewel</h3>
+                        <p>The birthplace of the Renaissance, Florence is a treasure trove of art and architecture. I long to visit the Uffizi Gallery to see Botticelli's "Birth of Venus," stand in awe before Michelangelo's "David" at the Accademia, and climb to the top of Brunelleschi's dome for panoramic views of this beautiful city.</p>
+                    </div>
+                </div>
+                
+                <div class="spot-card">
+                    <div class="spot-image">
+                        <a href="Images/Destinations/Italy/amalfi-coast.jpg">
+                            <img src="Images/Destinations/Italy/amalfi-coast.jpg" alt="Amalfi Coast">
+                        </a>
+                    </div>
+                    <div class="spot-content">
+                        <h3>Amalfi Coast: Mediterranean Paradise</h3>
+                        <p>The dramatic Amalfi Coast, with its colorful villages perched on cliffs overlooking the Mediterranean Sea, represents the quintessential Italian seaside experience. I dream of driving along the winding coastal road, exploring charming towns like Positano and Ravello, and enjoying fresh seafood with breathtaking views.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="destination-section">
+            <h2 class="section-title">Italian Experiences I Dream About</h2>
+            
+            <div class="italian-experiences">
+                <h3>La Dolce Vita: The Sweet Life in Italy</h3>
+                
+                <div class="experience-grid">
+                    <div class="experience-item">
+                        <div class="experience-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div class="experience-text">
+                            Taking a cooking class to learn the secrets of authentic Italian pasta making
+                        </div>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="experience-icon">
+                            <i class="fas fa-wine-glass-alt"></i>
+                        </div>
+                        <div class="experience-text">
+                            Wine tasting in Tuscany, sampling Chianti among rolling vineyards
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

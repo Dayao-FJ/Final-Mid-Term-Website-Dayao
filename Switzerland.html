@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Switzerland - Dream Destination</title>
+    <link rel="stylesheet" type="text/css" href="CSS files/Overall-Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .destination-header {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .destination-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8);
+        }
+        
+        .header-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .swiss-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .destination-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .destination-section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            color: #49225B;
+            border-bottom: 2px solid #49225B;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-family: "Libre Baskerville", serif;
+        }
+        
+        .content-block {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+        
+        .content-block.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .content-image {
+            flex: 0 0 45%;
+        }
+        
+        .content-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+        
+        .content-image img:hover {
+            transform: scale(1.02);
+        }
+        
+        .content-text {
+            flex: 1;
+        }
+        
+        .content-text p {
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .highlight-box {
+            background-color: #f0eee9;
+            border-left: 4px solid #49225B;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box h3 {
+            color: #49225B;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .highlight-box p {
+            margin: 0;
+        }
+        
+        .dream-spots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .spot-card {
+            flex: 0 0 calc(33.333% - 20px);
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .spot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .spot-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .spot-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .spot-card:hover .spot-image img {
+            transform: scale(1.05);
+        }
+        
+        .spot-content {
+            padding: 20px;
+        }
+        
+        .spot-content h3 {
+            color: #49225B;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .spot-content p {
+            text-align: justify;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .swiss-facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .fact-card {
+            flex: 1;
+            min-width: 250px;
+            background: #f0eee9;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .fact-icon {
+            font-size: 2rem;
+            color: #49225B;
+            margin-bottom: 15px;
+        }
+        
+        .fact-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #49225B;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content-block, .content-block.reverse {
+                flex-direction: column;
+            }
+            
+            .content-image {
+                flex: 0 0 100%;
+            }
+            
+            .spot-card {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+
+<div class="header" id="Top-header">
+    <div class="buttons">
+        <a href="index.html" class="btn" title="Home">
+            <i class="fas fa-home btn-icon"></i>
+            <span>Home</span>
+        </a>
+        <a href="About-Me.html" class="btn" title="About Me">
+            <i class="fas fa-user btn-icon"></i>
+            <span>About</span>
+        </a>
+        <a href="Skills-Interest-Hobbies.html" class="btn" title="Skills">
+            <i class="fas fa-brain btn-icon"></i>
+            <span>Skills</span>
+        </a>
+        <a href="Resume.html" class="btn" title="Resume">
+            <i class="fas fa-file-alt btn-icon"></i>
+            <span>Resume</span>
+        </a>
+        <a href="Photo-Gallery.html" class="btn" title="Gallery">
+            <i class="fas fa-images btn-icon"></i>
+            <span>Gallery</span>
+        </a>
+        <a href="My-Beats.html" class="btn" title="Music">
+            <i class="fas fa-music btn-icon"></i>
+            <span>Beats</span>
+        </a>
+        <a href="Film-Movies.html" class="btn" title="Movies">
+            <i class="fas fa-film btn-icon"></i>
+            <span>Movies</span>
+        </a>
+        <a href="Film-Series.html" class="btn" title="Series">
+            <i class="fas fa-tv btn-icon"></i>
+            <span>Series</span>
+        </a>
+        <a href="Dream-Vacation.html" class="btn active" title="Destinations">
+            <i class="fas fa-plane btn-icon"></i>
+            <span>Dreams</span>
+        </a>
+        <a href="Bucket-List.html" class="btn" title="Bucket List">
+            <i class="fas fa-list-check btn-icon"></i>
+            <span>Bucket</span>
+        </a>
+    </div>
+</div>
+
+<body>
+    <div class="destination-container">
+        <div class="destination-header">
+            <img src="Images/Destinations/Switzerland/switzerland-banner.avif" alt="Swiss Alps panorama">
+            <div class="header-content">
+                <h1>Switzerland: Alpine Paradise</h1>
+                <p>A journey through breathtaking mountains, pristine lakes, and charming villages</p>
+            </div>
+        </div>
+        
+        <div class="destination-section">
+            <h2 class="section-title">Why Switzerland Calls to My Heart</h2>
+            
+            <div class="content-block">
+                <div class="content-image">
+                    <a href="Images/Destinations/Switzerland/Switzerland-Image-1.jpg">
+                        <img src="Images/Destinations/Switzerland/Switzerland-Image-1.jpg" alt="Swiss mountain landscape">
+                    </a>
+                </div>
+                <div class="content-text">
+                    <p>Switzerland has always fascinated me with its breathtaking landscapes, rich history, and renowned cultural diversity. As someone who appreciates nature, history, and adventure, visiting Switzerland would be a dream come true. From the snow-capped peaks of the Swiss Alps to the picturesque cities of Zurich and Geneva, the country offers a unique blend of natural beauty and modern sophistication.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Alpine Wonderland</h3>
+                        <p>Switzerland is home to some of the most spectacular mountain scenery in the world, with 48 mountains that rise above 4,000 meters in the Swiss Alps. This alpine paradise offers endless opportunities for hiking, skiing, and simply admiring nature's grandeur.</p>
+                    </div>
+                    
+                    <p>One of the main reasons I want to visit Switzerland is to explore its stunning natural scenery. The Swiss Alps, with their towering mountains and pristine lakes, offer some of the most spectacular views in the world. I would love to visit the famous Matterhorn, take a scenic train ride on the Glacier Express, and enjoy the beauty of Lake Geneva. Additionally, experiencing the lush landscapes of Interlaken and the peaceful charm of Lucerne would make my journey even more memorable.</p>
+                </div>
+            </div>
+            
+            <div class="content-block reverse">
+                <div class="content-image">
+                    <a href="Images/Destinations/Switzerland/Switzerland-Image-2.jpg">
+                        <img src="Images/Destinations/Switzerland/Switzerland-Image-2.jpg" alt="Swiss city view">
+                    </a>
+                </div>
+                <div class="content-text">
+                    <p>Another reason I want to visit Switzerland is to experience its vibrant cities. Zurich, the financial capital, is known for its stunning architecture, world-class museums, and lively cultural scene. I would love to stroll along Bahnhofstrasse, explore the historic Old Town, and visit the Swiss National Museum. Geneva, home to many international organizations, also interests me. Walking around the shores of Lake Geneva and visiting the United Nations headquarters would be exciting experiences.</p>
+                    
+                    <p>Switzerland's rich history and traditions are another reason for my fascination. I am eager to learn more about its medieval castles, such as Château de Chillon, and experience its famous clock-making heritage in the Jura region. Visiting historical sites and museums would give me a deeper appreciation of Switzerland's contributions to art, science, and diplomacy.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Culinary Delights</h3>
+                        <p>Swiss cuisine is a delightful blend of German, French, and Italian influences. From world-famous chocolates and cheeses to hearty mountain dishes, Switzerland offers a gastronomic adventure that reflects its cultural diversity.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <div class="content-text">
+                    <p>In addition to its scenic beauty and cultural heritage, I am excited to try Swiss cuisine. Tasting authentic Swiss chocolate and indulging in traditional cheese fondue are experiences I wouldn't want to miss. I also look forward to trying raclette, rosti, and fresh pastries from Swiss bakeries.</p>
+                    
+                    <p>Lastly, Switzerland's winter activities are something I dream of experiencing. Skiing in Zermatt or St. Moritz, sledding in the Alps, and witnessing the magical beauty of the snowy landscapes would be unforgettable. The idea of cozying up in a chalet with a cup of hot chocolate while watching the snowfall is incredibly appealing.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Precision and Excellence</h3>
+                        <p>Switzerland is renowned for its commitment to quality and precision, evident in its watchmaking industry, efficient public transportation, and impeccable hospitality. Experiencing this Swiss standard of excellence firsthand would be both educational and inspiring.</p>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <img src="Images/Destinations/Switzerland/swiss-winter.jpg" alt="Swiss winter landscape">
+                </div>
+            </div>
+        </div>
+        
+        <div class="destination-section">
+            <h2 class="section-title">Fascinating Facts About Switzerland</h2>
+            
+            <div class="swiss-facts">
+                <div class="fact-card">
+                    <div class="fact-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <div class="fact-title">Multilingual Nation</div>
+                    <p>Switzerland has four official languages: German, French, Italian, and Romansh, reflecting its cultural diversity and central European location.</p>
+                </div>
+                
+                <div class="fact-card">
+                    <div class="fact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="fact-title">Watchmaking Excellence</div>
+                    <p>Swiss watches are world-renowned for their precision and craftsmanship, with brands like Rolex, Patek Philippe, and Omega setting global standards.</p>
+                </div>
+                
+                <div class="fact-card">
+                    <div class="fact-icon">
+                        <i class="fas fa-train"></i>
+                    </div>
+                    <div class="fact-title">Railway Marvel</div>
+                    <p>The Swiss railway system is one of the most efficient and scenic in the world, offering breathtaking views and punctuality that set a benchmark for public transportation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+</body>
+
+</html>

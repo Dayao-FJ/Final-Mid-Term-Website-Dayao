@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>My Bucket List</title>
+    <link rel="stylesheet" type="text/css" href="CSS files/Overall-Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .bucket-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .bucket-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .bucket-header h1 {
+            font-size: 2.5rem;
+            color: #49225B;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .bucket-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .bucket-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .bucket-category {
+            flex: 1;
+            min-width: 280px;
+            max-width: 400px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .bucket-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .category-header {
+            background: #49225B;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .category-header i {
+            font-size: 1.5rem;
+        }
+        
+        .category-header h2 {
+            margin: 0;
+            font-size: 1.3rem;
+            text-indent: 0;
+        }
+        
+        .bucket-list {
+            padding: 20px;
+        }
+        
+        .bucket-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 5px;
+            border-bottom: 1px dashed #e0e0e0;
+            transition: background-color 0.2s;
+        }
+        
+        .bucket-item:last-child {
+            border-bottom: none;
+        }
+        
+        .bucket-item:hover {
+            background-color: #f9f5ff;
+        }
+        
+        .bucket-icon {
+            flex: 0 0 40px;
+            height: 40px;
+            background: #f0eee9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #49225B;
+            font-size: 1.2rem;
+        }
+        
+        .bucket-text {
+            flex: 1;
+        }
+        
+        .bucket-text p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+        
+        .bucket-progress {
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 5px;
+            margin: 15px auto;
+            max-width: 500px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            width: 15%;
+            background: linear-gradient(to right, #49225B, #7B3FA0);
+            border-radius: 5px;
+        }
+        
+        .progress-text {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .bucket-footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background: #f0eee9;
+            border-radius: 10px;
+        }
+        
+        .bucket-footer p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #49225B;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .bucket-categories {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .bucket-category {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<div class="header" id="Top-header">
+    <div class="buttons">
+        <a href="index.html" class="btn" title="Home">
+            <i class="fas fa-home btn-icon"></i>
+            <span>Home</span>
+        </a>
+        <a href="About-Me.html" class="btn" title="About Me">
+            <i class="fas fa-user btn-icon"></i>
+            <span>About</span>
+        </a>
+        <a href="Skills-Interest-Hobbies.html" class="btn" title="Skills">
+            <i class="fas fa-brain btn-icon"></i>
+            <span>Skills</span>
+        </a>
+        <a href="Resume.html" class="btn" title="Resume">
+            <i class="fas fa-file-alt btn-icon"></i>
+            <span>Resume</span>
+        </a>
+        <a href="Photo-Gallery.html" class="btn" title="Gallery">
+            <i class="fas fa-images btn-icon"></i>
+            <span>Gallery</span>
+        </a>
+        <a href="My-Beats.html" class="btn" title="Music">
+            <i class="fas fa-music btn-icon"></i>
+            <span>Beats</span>
+        </a>
+        <a href="Film-Movies.html" class="btn" title="Movies">
+            <i class="fas fa-film btn-icon"></i>
+            <span>Movies</span>
+        </a>
+        <a href="Film-Series.html" class="btn" title="Series">
+            <i class="fas fa-tv btn-icon"></i>
+            <span>Series</span>
+        </a>
+        <a href="Dream-Vacation.html" class="btn" title="Destinations">
+            <i class="fas fa-plane btn-icon"></i>
+            <span>Dreams</span>
+        </a>
+        <a href="Bucket-List.html" class="btn active" title="Bucket List">
+            <i class="fas fa-list-check btn-icon"></i>
+            <span>Bucket</span>
+        </a>
+    </div>
+</div>
+
+<body>
+    <div class="bucket-container">
+        <div class="bucket-header">
+            <h1>✨ My Bucket List ✨</h1>
+            <p>Life is short, but the list of things I want to experience is long. Here are the dreams, adventures, and accomplishments I hope to fulfill in my lifetime.</p>
+        </div>
+        
+        <div class="bucket-categories">
+            <div class="bucket-category">
+                <div class="category-header">
+                    <i class="fas fa-laptop-code"></i>
+                    <h2>Tech & Skills</h2>
+                </div>
+                <div class="bucket-list">
+                    <div class="bucket-item">
+                        <div class="bucket-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="bucket-text">
+                            <p>Build my own tech project using Arduino</p>
+                        </div>
+                    </div>
+                    <div class="bucket-item">
+                        <div class="bucket-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="bucket-text">
+                            <p>Develop a mobile or web application</p>
+                        </div>
+                    </div>
+                    <div class="bucket-item">
+                        <div class="bucket-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="bucket-text">
+                            <p>Participate in a major coding competition</p>
+                        </div>
+                    </div>
+                    <div class="bucket-item">
+                        <div class="bucket-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <div class="bucket-text">
+                            <p>Make a short film</p>
+                        </div>
+                    </div>
+                    <div class="bucket-item">
+                        <div class="bucket-icon">
+                            <i class="fas fa-chess"></i>
+                        </div>
+                        <div class="bucket-text">
+                            <p>Master shogi and chess strategies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bucket-category">
+                <div class="category-header">
+                    <i class="fas fa-globe-asia"></i>
+                    <h2>Travel & Experiences</h2>
+                </div>
+                <div class="bucket-list">
+                    <div class="bucket-item">
+                        <div class="bucket-icon">
+                            <i class="fas fa-torii-gate"></i>
+                        </div>
+                        <div class="bucket-text">
+                            <p>Travel to Japan</p>
+                        </div>
+                    </div>
+                    <div class="bucket-item">
+                        <div class="bucket-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <div class="bucket-text">
+                            <p>Travel to Switzerland</p>
+                        </div>
+                    </div>
+                    <div class="bucket-item">
+                        <div class="bucket-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="bucket-text">
+                            <p>Travel to Canada</p>
+                        </div>
+                    </div>
+                    <div class="bucket-item">
+                        <div class="bucket-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="bucket-text">
+                            <p>Travel to South Korea and experience K-pop culture</p>
+                        </div>
+                    </div>
+                    <div class="bucket-item">
+                        <div class="bucket-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <div class="bucket-text">
+                            <p>Travel to France</p>
+                        </div>
+                    </div>
+                    <div class="bucket-item">
+                        <div class="bucket-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <div class="bucket-text">
+                            <p>Explore historical sites in the Philippines</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bucket-category">
+                <div class="category-header">
+                    <i class="fas fa-heart"></i>
+                    <h2>Hobbies & Passions</h2>
+                </div>
+                <div class="bucket-list">
+                    <div class="bucket-item">
+                        <div class="bucket-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="bucket-text">
+                            <p>Read all Sherlock Holmes books</p>
+                        </div>
+                    </div>
+                    <div class="bucket-item">
+                        <div class="bucket-icon">
+                            <i class="fas fa-tv"></i>
+                        </div>
+                        <div class="bucket-text">
+                            <p>Watch all anime on my must-watch list</p>
+                        </div>
+                    </div>
+                    <div class="bucket-item">
+                        <div class="bucket-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="bucket-text">
+                            <p>Collect more Pokémon and One Piece cards</p>
+                        </div>
+                    </div>
+                    <div class="bucket-item">
+                        <div class="bucket-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="bucket-text">
+                            <p>Be a streamer on opening booster cards</p>
+                        </div>
+                    </div>
+                    <div class="bucket-item">
+                        <div class="bucket-icon">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="bucket-text">
+                            <p>Attend a live concert of The Peggies or YOASOBI</p>
+                        </div>
+                    </div>
+                    <div class="bucket-item">
+                        <div class="bucket-icon">
+                            <i class="fas fa-mask"></i>
+                        </div>
+                        <div class="bucket-text">
+                            <p>Visit local anime conventions and cosplay</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bucket-progress">
+            <h3>My Bucket List Progress</h3>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <p class="progress-text">3 completed, 14 to go!</p>
+        </div>
+        
+        <div class="bucket-footer">
+            <p>"Life isn't about finding yourself. Life is about creating yourself." — George Bernard Shaw</p>
+        </div>
+        
+        <div style="text-align: right; margin-top: 30px;">
+            <a class="btn" href="#Top-header" style="float: right;">Go to top</a>
+            <br>
+            <br>
+            <a class="btn" href="index.html" style="float: right;">Home</a>
+        </div>
+    </div>
+</body>
+
+</html>

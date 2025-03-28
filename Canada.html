@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Canada - Dream Destination</title>
+    <link rel="stylesheet" type="text/css" href="CSS files/Overall-Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .destination-header {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .destination-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+        
+        .header-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .canada-flag {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .destination-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .destination-section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            color: #49225B;
+            border-bottom: 2px solid #49225B;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-family: "Libre Baskerville", serif;
+        }
+        
+        .content-block {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+        
+        .content-block.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .content-image {
+            flex: 0 0 45%;
+        }
+        
+        .content-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+        
+        .content-image img:hover {
+            transform: scale(1.02);
+        }
+        
+        .content-text {
+            flex: 1;
+        }
+        
+        .content-text p {
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .highlight-box {
+            background-color: #f0eee9;
+            border-left: 4px solid #49225B;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box h3 {
+            color: #49225B;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .highlight-box p {
+            margin: 0;
+        }
+        
+        .dream-spots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .spot-card {
+            flex: 0 0 calc(33.333% - 20px);
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .spot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .spot-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .spot-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .spot-card:hover .spot-image img {
+            transform: scale(1.05);
+        }
+        
+        .spot-content {
+            padding: 20px;
+        }
+        
+        .spot-content h3 {
+            color: #49225B;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .spot-content p {
+            text-align: justify;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .fact-list {
+            margin-top: 30px;
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .fact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        
+        .fact-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .fact-icon {
+            flex: 0 0 40px;
+            height: 40px;
+            background: #49225B;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .fact-text {
+            flex: 1;
+        }
+        
+        .fact-text h4 {
+            margin: 0 0 5px 0;
+            color: #49225B;
+        }
+        
+        .fact-text p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content-block, .content-block.reverse {
+                flex-direction: column;
+            }
+            
+            .content-image {
+                flex: 0 0 100%;
+            }
+            
+            .spot-card {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+
+<div class="header" id="Top-header">
+    <div class="buttons">
+        <a href="index.html" class="btn" title="Home">
+            <i class="fas fa-home btn-icon"></i>
+            <span>Home</span>
+        </a>
+        <a href="About-Me.html" class="btn" title="About Me">
+            <i class="fas fa-user btn-icon"></i>
+            <span>About</span>
+        </a>
+        <a href="Skills-Interest-Hobbies.html" class="btn" title="Skills">
+            <i class="fas fa-brain btn-icon"></i>
+            <span>Skills</span>
+        </a>
+        <a href="Resume.html" class="btn" title="Resume">
+            <i class="fas fa-file-alt btn-icon"></i>
+            <span>Resume</span>
+        </a>
+        <a href="Photo-Gallery.html" class="btn" title="Gallery">
+            <i class="fas fa-images btn-icon"></i>
+            <span>Gallery</span>
+        </a>
+        <a href="My-Beats.html" class="btn" title="Music">
+            <i class="fas fa-music btn-icon"></i>
+            <span>Beats</span>
+        </a>
+        <a href="Film-Movies.html" class="btn" title="Movies">
+            <i class="fas fa-film btn-icon"></i>
+            <span>Movies</span>
+        </a>
+        <a href="Film-Series.html" class="btn" title="Series">
+            <i class="fas fa-tv btn-icon"></i>
+            <span>Series</span>
+        </a>
+        <a href="Dream-Vacation.html" class="btn active" title="Destinations">
+            <i class="fas fa-plane btn-icon"></i>
+            <span>Dreams</span>
+        </a>
+        <a href="Bucket-List.html" class="btn" title="Bucket List">
+            <i class="fas fa-list-check btn-icon"></i>
+            <span>Bucket</span>
+        </a>
+    </div>
+</div>
+
+<body>
+    <div class="destination-container">
+        <div class="destination-header">
+            <img src="Images/Destinations/Canada/canada-banner.jpg" alt="Beautiful Canadian landscape">
+            <div class="header-content">
+                <h1>Canada: Land of Maple</h1>
+                <p>A journey through breathtaking landscapes, vibrant cities, and rich cultural experiences</p>
+            </div>
+        </div>
+        
+        <div class="destination-section">
+            <h2 class="section-title">Why Canada Calls to Me</h2>
+            
+            <div class="content-block">
+                <div class="content-image">
+                    <a href="Images/Destinations/Canada/Canada-Image-1.jpg">
+                        <img src="Images/Destinations/Canada/Canada-Image-1.jpg" alt="Canadian Rocky Mountains">
+                    </a>
+                </div>
+                <div class="content-text">
+                    <p>Canada has always intrigued me with its stunning landscapes, diverse culture, and welcoming atmosphere. As someone who appreciates nature, history, and multicultural experiences, visiting Canada would be a dream come true.</p>
+                    
+                    <p>From the breathtaking Rocky Mountains to the vibrant cities of Toronto and Vancouver, Canada offers a mix of adventure and cultural enrichment that few countries can match.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Did You Know?</h3>
+                        <p>Canada has the longest coastline of any country in the world, stretching over 202,080 kilometers. This means endless opportunities to explore beautiful beaches, rugged cliffs, and coastal wildlife.</p>
+                    </div>
+                    
+                    <p>One of the main reasons I want to visit Canada is to explore its natural wonders. The vast wilderness of Banff National Park, with its crystal-clear lakes and snow-capped mountains, is a sight I long to see. I would love to witness the mesmerizing beauty of Lake Louise and take in the panoramic views from the top of Sulphur Mountain.</p>
+                </div>
+            </div>
+            
+            <div class="content-block reverse">
+                <div class="content-image">
+                    <a href="Images/Destinations/Canada/Canada-Image-2.jpg">
+                        <img src="Images/Destinations/Canada/Canada-Image-2.jpg" alt="Toronto Skyline">
+                    </a>
+                </div>
+                <div class="content-text">
+                    <p>Another reason I want to visit Canada is to experience its multicultural cities. Toronto, known for its diversity, is a place where different cultures blend harmoniously. I want to explore the vibrant neighborhoods, visit the iconic CN Tower, and try different cuisines from around the world.</p>
+                    
+                    <p>Vancouver, with its breathtaking coastline and modern cityscape, also attracts me. Walking along Stanley Park's scenic Seawall and visiting Granville Island's bustling markets would be on my itinerary.</p>
+                    
+                    <p>Canada is also known for its rich history and indigenous heritage. I would love to learn more about the First Nations' traditions and visit cultural landmarks such as the Canadian Museum of History in Ottawa. Experiencing the historical charm of Old Quebec, with its cobblestone streets and European-inspired architecture, would also be a highlight of my trip.</p>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <div class="content-text">
+                    <p>In addition to its scenic beauty and cultural diversity, I am excited to try Canadian cuisine. Tasting poutine, a dish of fries topped with cheese curds and gravy, is a must. I also want to try maple syrup treats and fresh seafood from the coastal regions.</p>
+                    
+                    <p>Lastly, experiencing Canada's winter activities would be an adventure. I want to see the magical Northern Lights in Yukon, go skiing in Whistler, and enjoy a cozy evening by a fireplace in a log cabin. The idea of experiencing a true winter wonderland fascinates me.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Canadian Spirit</h3>
+                        <p>Canadians are known worldwide for their friendliness and politeness. The country consistently ranks among the top nations for quality of life, making it not just a beautiful place to visit, but also a welcoming one.</p>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <a href="Images/Destinations/Canada/northern-lights.jpg">
+                    <img src="Images/Destinations/Canada/northern-lights.jpg" alt="Northern Lights in Canada">
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="destination-section">
+            <h2 class="section-title">My Dream Spots in Canada</h2>
+            
+            <div class="dream-spots">
+                <div class="spot-card">
+                    <div class="spot-image">
+                        <a href="Images/Destinations/Canada/Banff-National-Park.jpg">
+                            <img src="Images/Destinations/Canada/Banff-National-Park.jpg" alt="Banff National Park">
+                        </a>
+                    </div>
+                    <div class="spot-content">
+                        <h3>Banff National Park</h3>
+                        <p>Canada's oldest national park offers breathtaking mountain landscapes and crystal-clear lakes. As a UNESCO World Heritage site, it provides an inspiring setting for nature lovers and adventure seekers. I dream of hiking its trails and witnessing the beauty of Lake Louise in person.</p>
+                    </div>
+                </div>
+                
+                <div class="spot-card">
+                    <div class="spot-image">
+                        <a href="Images/Destinations/Canada/Parliament-Hill.jpg">
+                            <img src="Images/Destinations/Canada/Parliament-Hill.jpg" alt="Parliament Hill, Ottawa">
+                        </a>
+                    </div>
+                    <div class="spot-content">
+                        <h3>Parliament Hill, Ottawa</h3>
+                        <p>Home to Canada's Parliament and national museums, Ottawa represents the country's significance in governance and history. The iconic Rideau Canal, which transforms into the world's largest skating rink in winter, offers a unique and picturesque way to experience the city's charm.</p>
+                    </div>
+                </div>
+                
+                <div class="spot-card">
+                    <div class="spot-image">
+                        <a href="Images/Destinations/Canada/CN-Tower.jpg">
+                            <img src="Images/Destinations/Canada/CN-Tower.jpg" alt="CN Tower, Toronto">
+                        </a>
+                    </div>
+                    <div class="spot-content">
+                        <h3>CN Tower, Toronto</h3>
+                        <p>For those who admire art and urban culture, a visit to Toronto's CN Tower creates a tangible connection to Canada's vibrant city life. This architectural marvel offers breathtaking views of the city skyline and serves as a symbol of Canadian innovation.</p>
+                    </div>
+                    <br>
+                    <br>
+                    <a class="btn" href="#Top-header" style="float: right;">Go to top</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

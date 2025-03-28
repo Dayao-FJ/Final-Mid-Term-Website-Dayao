@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>South Korea - Dream Destination</title>
+    <link rel="stylesheet" type="text/css" href="CSS files/Overall-Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .destination-header {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .destination-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8);
+        }
+        
+        .header-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .korea-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .destination-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .destination-section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            color: #49225B;
+            border-bottom: 2px solid #49225B;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-family: "Libre Baskerville", serif;
+        }
+        
+        .content-block {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+        
+        .content-block.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .content-image {
+            flex: 0 0 45%;
+        }
+        
+        .content-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+        
+        .content-image img:hover {
+            transform: scale(1.02);
+        }
+        
+        .content-text {
+            flex: 1;
+        }
+        
+        .content-text p {
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .highlight-box {
+            background-color: #f0eee9;
+            border-left: 4px solid #49225B;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box h3 {
+            color: #49225B;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .highlight-box p {
+            margin: 0;
+        }
+        
+        .dream-spots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .spot-card {
+            flex: 0 0 calc(33.333% - 20px);
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .spot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .spot-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .spot-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .spot-card:hover .spot-image img {
+            transform: scale(1.05);
+        }
+        
+        .spot-content {
+            padding: 20px;
+        }
+        
+        .spot-content h3 {
+            color: #49225B;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .spot-content p {
+            text-align: justify;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content-block, .content-block.reverse {
+                flex-direction: column;
+            }
+            
+            .content-image {
+                flex: 0 0 100%;
+            }
+            
+            .spot-card {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+
+<div class="header" id="Top-header">
+    <div class="buttons">
+        <a href="index.html" class="btn" title="Home">
+            <i class="fas fa-home btn-icon"></i>
+            <span>Home</span>
+        </a>
+        <a href="About-Me.html" class="btn" title="About Me">
+            <i class="fas fa-user btn-icon"></i>
+            <span>About</span>
+        </a>
+        <a href="Skills-Interest-Hobbies.html" class="btn" title="Skills">
+            <i class="fas fa-brain btn-icon"></i>
+            <span>Skills</span>
+        </a>
+        <a href="Resume.html" class="btn" title="Resume">
+            <i class="fas fa-file-alt btn-icon"></i>
+            <span>Resume</span>
+        </a>
+        <a href="Photo-Gallery.html" class="btn" title="Gallery">
+            <i class="fas fa-images btn-icon"></i>
+            <span>Gallery</span>
+        </a>
+        <a href="My-Beats.html" class="btn" title="Music">
+            <i class="fas fa-music btn-icon"></i>
+            <span>Beats</span>
+        </a>
+        <a href="Film-Movies.html" class="btn" title="Movies">
+            <i class="fas fa-film btn-icon"></i>
+            <span>Movies</span>
+        </a>
+        <a href="Film-Series.html" class="btn" title="Series">
+            <i class="fas fa-tv btn-icon"></i>
+            <span>Series</span>
+        </a>
+        <a href="Dream-Vacation.html" class="btn active" title="Destinations">
+            <i class="fas fa-plane btn-icon"></i>
+            <span>Dreams</span>
+        </a>
+        <a href="Bucket-List.html" class="btn" title="Bucket List">
+            <i class="fas fa-list-check btn-icon"></i>
+            <span>Bucket</span>
+        </a>
+    </div>
+</div>
+
+<body>
+    <div class="destination-container">
+        <div class="destination-header">
+            <img src="Images/Destinations/South Korea/Seoul-Sky.jpg" alt="Seoul skyline with traditional and modern architecture">
+            <div class="header-content">
+                <h1>South Korea: Land of K-Culture</h1>
+                <p>Where tradition meets innovation in a vibrant cultural landscape</p>
+            </div>
+        </div>
+        
+        <div class="destination-section">
+            <h2 class="section-title">Why South Korea Calls to My Heart</h2>
+            
+            <div class="content-block">
+                <div class="content-image">
+                    <a href="Images/Destinations/South Korea/seoul-night.jpeg">
+                        <img src="Images/Destinations/South Korea/seoul-night.jpeg" alt="Seoul at night with neon lights">
+                    </a>
+                </div>
+                <div class="content-text">
+                    <p>South Korea has captured my imagination with its fascinating blend of ancient traditions and cutting-edge modernity. As someone who appreciates both cultural heritage and technological innovation, visiting South Korea would be an incredible journey of discovery. From the bustling streets of Seoul to the serene temples nestled in mountains, the country offers diverse experiences that appeal to all my interests.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Tech Wonderland</h3>
+                        <p>South Korea has the world's fastest average internet connection speed and is home to tech giants like Samsung and LG. Seoul's Gangnam district showcases the country's technological prowess with its futuristic architecture and digital innovations.</p>
+                    </div>
+                    
+                    <p>One of the main reasons I want to visit South Korea is to experience its vibrant K-pop and K-drama culture firsthand. As a fan of groups like TWICE and ITZY, I dream of visiting entertainment company buildings, K-pop museums, and perhaps even attending a live concert. The global phenomenon of Korean entertainment has sparked my interest in the country's broader cultural landscape, from its fashion trends to its unique aesthetic sensibilities.</p>
+                </div>
+            </div>
+            
+            <div class="content-block reverse">
+                <div class="content-image">
+                    <a href="Images/Destinations/South Korea/korean-foods.avif">
+                        <img src="Images/Destinations/South Korea/korean-foods.avif" alt="Traditional Korean cuisine">
+                    </a>
+                </div>
+                <div class="content-text">
+                    <p>Korean cuisine is another major draw for me. I'm eager to try authentic Korean dishes beyond what I've experienced in restaurants at home. From the communal experience of Korean barbecue to street food in bustling markets, the diverse flavors and cooking techniques fascinate me. I'm particularly interested in trying regional specialties and understanding how food connects to Korean cultural identity and history.</p>
+                    
+                    <p>The juxtaposition of old and new in South Korea also appeals to me. I would love to explore historic palaces like Gyeongbokgung in Seoul, where I could witness traditional ceremonies and architecture, and then step into the ultra-modern districts like Dongdaemun with its futuristic design plaza. This harmonious coexistence of tradition and innovation reflects a culture that honors its past while boldly embracing the future.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Cultural Heritage</h3>
+                        <p>Despite its rapid modernization, South Korea has preserved its cultural heritage through 14 UNESCO World Heritage sites, including historic villages, Buddhist temples, and royal tombs that date back to ancient dynasties.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <div class="content-text">
+                    <p>South Korea's natural landscapes also call to me. From the volcanic terrain of Jeju Island to the serene mountains of Seoraksan National Park, the country offers breathtaking scenery that contrasts with its urban environments. I dream of hiking through forests adorned with Buddhist temples, relaxing in hot springs, and witnessing the spectacular cherry blossoms in spring.</p>
+                    
+                    <p>The Korean commitment to wellness and self-care is another aspect that interests me. I would love to experience a traditional Korean spa (jjimjilbang), learn about Korean skincare routines, and perhaps try traditional healing practices. This holistic approach to well-being reflects deeper cultural values that I'm eager to understand.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>K-Wave Phenomenon</h3>
+                        <p>The Korean Wave (Hallyu) has spread Korean culture globally through music, dramas, films, and fashion. This cultural soft power has transformed South Korea into a trendsetter and created communities of fans worldwide who share a passion for Korean entertainment.</p>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <img src="Images/Destinations/South Korea/twice-concert.jpg" alt="K-pop concert with light sticks">
+                </div>
+            </div>
+        </div>
+        
+        <div class="destination-section">
+            <h2 class="section-title">My Dream Spots in South Korea</h2>
+            
+            <div class="dream-spots">
+                <div class="spot-card">
+                    <div class="spot-image">
+                        <a href="Images/Destinations/South Korea/palace.avif">
+                            <img src="Images/Destinations/South Korea/palace.avif" alt="Gyeongbokgung Palace in Seoul">
+                        </a>
+                    </div>
+                    <div class="spot-content">
+                        <h3>Seoul: Dynamic Capital</h3>
+                        <p>As South Korea's vibrant capital, Seoul perfectly embodies the country's blend of tradition and innovation. I dream of exploring the majestic Gyeongbokgung Palace, shopping in the trendy Myeongdong district, and experiencing the nightlife in Hongdae. The N Seoul Tower would offer panoramic views of this sprawling metropolis that never sleeps.</p>
+                    </div>
+                </div>
+                
+                <div class="spot-card">
+                    <div class="spot-image">
+                        <a href="Images/Destinations/South Korea/jeju-island.jpg">
+                            <img src="Images/Destinations/South Korea/jeju-island.jpg" alt="Scenic view of Jeju Island">
+                        </a>
+                    </div>
+                    <div class="spot-content">
+                        <h3>Jeju Island: Natural Wonder</h3>
+                        <p>Known as the "Hawaii of Korea," Jeju Island features stunning volcanic landscapes, beautiful beaches, and unique cultural traditions. I would love to hike up Mount Hallasan (South Korea's highest peak), explore the mysterious lava tubes, and witness the famous female divers (haenyeo) who harvest seafood without modern equipment.</p>
+                    </div>
+                </div>
+                
+                <div class="spot-card">
+                    <div class="spot-image">
+                        <a href="Images/Destinations/South Korea/beach.jpg">
+                            <img src="Images/Destinations/South Korea/beach.jpg" alt="Haeundae Beach in Busan">
+                        </a>
+                    </div>
+                    <div class="spot-content">
+                        <h3>Busan: Coastal Gem</h3>
+                        <p>South Korea's second-largest city offers a perfect mix of urban excitement and natural beauty. I dream of relaxing on Haeundae Beach, visiting the colorful Gamcheon Culture Village, and experiencing the bustling Jagalchi Fish Market. The coastal temples like Haedong Yonggungsa provide a spiritual dimension to this vibrant port city.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
+

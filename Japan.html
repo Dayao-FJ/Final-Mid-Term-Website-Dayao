@@ -1,0 +1,389 @@
+<UPDATED_CODE><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Japan - Dream Destination</title>
+    <link rel="stylesheet" type="text/css" href="CSS files/Overall-Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .destination-header {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .destination-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8);
+        }
+        
+        .header-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .japan-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .destination-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .destination-section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            color: #49225B;
+            border-bottom: 2px solid #49225B;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-family: "Libre Baskerville", serif;
+        }
+        
+        .content-block {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+        
+        .content-block.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        .content-image {
+            flex: 0 0 45%;
+        }
+        
+        .content-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: transform 0.3s;
+        }
+        
+        .content-image img:hover {
+            transform: scale(1.02);
+        }
+        
+        .content-text {
+            flex: 1;
+        }
+        
+        .content-text p {
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .highlight-box {
+            background-color: #f0eee9;
+            border-left: 4px solid #49225B;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box h3 {
+            color: #49225B;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .highlight-box p {
+            margin: 0;
+        }
+        
+        .dream-spots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .spot-card {
+            flex: 0 0 calc(33.333% - 20px);
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .spot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .spot-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .spot-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .spot-card:hover .spot-image img {
+            transform: scale(1.05);
+        }
+        
+        .spot-content {
+            padding: 20px;
+        }
+        
+        .spot-content h3 {
+            color: #49225B;
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .spot-content p {
+            text-align: justify;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .anime-connection {
+            background: linear-gradient(to right, #f8f6f3, #f0eee9);
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 40px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .anime-connection h3 {
+            color: #49225B;
+            margin-top: 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .anime-connection p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .content-block, .content-block.reverse {
+                flex-direction: column;
+            }
+            
+            .content-image {
+                flex: 0 0 100%;
+            }
+            
+            .spot-card {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
+</head>
+
+<div class="header" id="Top-header">
+    <div class="buttons">
+        <a href="index.html" class="btn" title="Home">
+            <i class="fas fa-home btn-icon"></i>
+            <span>Home</span>
+        </a>
+        <a href="About-Me.html" class="btn" title="About Me">
+            <i class="fas fa-user btn-icon"></i>
+            <span>About</span>
+        </a>
+        <a href="Skills-Interest-Hobbies.html" class="btn" title="Skills">
+            <i class="fas fa-brain btn-icon"></i>
+            <span>Skills</span>
+        </a>
+        <a href="Resume.html" class="btn" title="Resume">
+            <i class="fas fa-file-alt btn-icon"></i>
+            <span>Resume</span>
+        </a>
+        <a href="Photo-Gallery.html" class="btn" title="Gallery">
+            <i class="fas fa-images btn-icon"></i>
+            <span>Gallery</span>
+        </a>
+        <a href="My-Beats.html" class="btn" title="Music">
+            <i class="fas fa-music btn-icon"></i>
+            <span>Beats</span>
+        </a>
+        <a href="Film-Movies.html" class="btn" title="Movies">
+            <i class="fas fa-film btn-icon"></i>
+            <span>Movies</span>
+        </a>
+        <a href="Film-Series.html" class="btn" title="Series">
+            <i class="fas fa-tv btn-icon"></i>
+            <span>Series</span>
+        </a>
+        <a href="Dream-Vacation.html" class="btn active" title="Destinations">
+            <i class="fas fa-plane btn-icon"></i>
+            <span>Dreams</span>
+        </a>
+        <a href="Bucket-List.html" class="btn" title="Bucket List">
+            <i class="fas fa-list-check btn-icon"></i>
+            <span>Bucket</span>
+        </a>
+    </div>
+</div>
+
+<body>
+    <div class="destination-container">
+        <div class="destination-header">
+            <img src="Images/Destinations/Japan/japan-banner.jpg" alt="Beautiful Japanese landscape with Mt. Fuji">
+            <div class="header-content">
+                <h1>Japan: Land of the Rising Sun</h1>
+                <p>Where tradition meets innovation in a harmonious blend of ancient culture and modern marvels</p>
+            </div>
+        </div>
+        
+        <div class="destination-section">
+            <h2 class="section-title">Why Japan Captivates My Imagination</h2>
+            
+            <div class="content-block">
+                <div class="content-image">
+                    <a href="Images/Destinations/Japan/Japan-Image-1.jpg">
+                        <img src="Images/Destinations/Japan/Japan-Image-1.jpg" alt="Traditional Japanese temple">
+                    </a>
+                </div>
+                <div class="content-text">
+                    <p>Japan has always fascinated me with its rich culture, advanced technology, and breathtaking scenery. As someone who enjoys anime, Japanese literature, and traditional arts, visiting Japan is a dream come true. I want to experience both the modern and historical aspects of the country, from the bustling cityscapes of Tokyo to the serene temples of Kyoto.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Cultural Immersion</h3>
+                        <p>Japan offers a unique opportunity to witness centuries-old traditions coexisting with cutting-edge innovation. From ancient tea ceremonies to robot restaurants, the contrast is both striking and harmonious.</p>
+                    </div>
+                    
+                    <p>One of the main reasons I want to visit Japan is to explore Akihabara, the famous district for anime, manga, and gaming. As a fan of Japanese pop culture, I would love to visit anime-themed cafes, browse through stores filled with collectibles, and immerse myself in the vibrant atmosphere. I also want to see the life-sized Gundam statue in Odaiba, which is an iconic representation of Japan's influence on the world of anime and robotics.</p>
+                </div>
+            </div>
+            
+            <div class="content-block reverse">
+                <div class="content-image">
+                    <a href="Images/Destinations/Japan/Japan-Image-2.jpg">
+                        <img src="Images/Destinations/Japan/Japan-Image-2.jpg" alt="Modern Tokyo cityscape">
+                    </a>
+                </div>
+                <div class="content-text">
+                    <p>Another place I want to visit is Kyoto, known for its beautiful temples and traditional streets. I would love to walk through Fushimi Inari Shrine, with its thousands of red torii gates creating a breathtaking path through the forest. Visiting Kinkaku-ji, the Golden Pavilion, would also be a dream, as it is one of the most stunning temples in Japan.</p>
+                    
+                    <p>Experiencing a traditional tea ceremony and wearing a kimono while strolling through Gion, the historic geisha district, are also on my bucket list. These experiences would connect me to Japan's rich cultural heritage and provide insights into traditions that have been preserved for centuries.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Culinary Adventure</h3>
+                        <p>Japanese cuisine is renowned worldwide for its precision, presentation, and flavors. From street food to Michelin-starred restaurants, Japan offers a gastronomic journey unlike any other.</p>
+                    </div>
+                    
+                    <p>Aside from the cultural aspects, I am also eager to try authentic Japanese cuisine. Sushi, ramen, takoyaki, and wagyu beef are just some of the dishes I want to taste. Visiting Osaka's Dotonbori, a famous street filled with food stalls and neon lights, would be a must for any food enthusiast like myself.</p>
+                </div>
+            </div>
+            
+            <div class="content-block">
+                <div class="content-text">
+                    <p>Lastly, I want to visit Hokkaido during winter to experience the Sapporo Snow Festival. The magnificent ice sculptures and the winter wonderland scenery would be a magical experience. I also want to relax in an onsen, or hot spring, in Hakone or Beppu, enjoying Japan's natural beauty while soaking in warm waters.</p>
+                    
+                    <p>Japan offers a perfect blend of tradition and modernity, making it a fascinating place to explore. From anime culture to historical temples, from delicious food to scenic landscapes, visiting Japan would be an unforgettable experience that I truly look forward to.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>Seasonal Beauty</h3>
+                        <p>Each season in Japan brings its own unique charm: cherry blossoms in spring, vibrant festivals in summer, colorful foliage in autumn, and snow-covered landscapes in winter. No matter when you visit, there's always something spectacular to witness.</p>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <img src="Images/Destinations/Japan/cherry-blossoms.jpg" alt="Cherry blossoms in Japan">
+                </div>
+            </div>
+            
+            <div class="anime-connection">
+                <h3>My Connection Through Anime and Detective Conan</h3>
+                <p>My fascination with Japan began through anime, particularly Detective Conan. The series not only entertained me but also introduced me to Japanese culture, landmarks, and traditions. Seeing locations like the Togetsukyo Bridge in Kyoto and Tsutenkaku Tower in Osaka featured in Detective Conan episodes has made these places feel familiar yet mysterious. Visiting these locations would be like stepping into the world of my favorite anime, connecting fiction with reality in a meaningful way.</p>
+            </div>
+        </div>
+        
+        <div class="destination-section">
+            <h2 class="section-title">My Dream Spots in Japan</h2>
+            
+            <div class="dream-spots">
+                <div class="spot-card">
+                    <div class="spot-image">
+                        <a href="Images/Destinations/Japan/Togetsukyo-Bridge.jpg">
+                            <img src="Images/Destinations/Japan/Togetsukyo-Bridge.jpg" alt="Togetsukyo Bridge">
+                        </a>
+                    </div>
+                    <div class="spot-content">
+                        <h3>Togetsukyo Bridge, Kyoto</h3>
+                        <p>This iconic bridge in Arashiyama, Kyoto, is famously featured in Detective Conan: Crossroad in the Ancient Capital. The serene surroundings and bamboo forests make it a perfect spot for both anime fans and nature lovers alike.</p>
+                    </div>
+                </div>
+                <div class="spot-card">
+                    <div class="spot-image">
+                        <a href="Images/Destinations/Japan/Akihabara.jpg">
+                            <img src="Images/Destinations/Japan/Akihabara.jpg" alt="Akihabara Electric Town">
+                        </a>
+                    </div>
+                    <div class="spot-content">
+                        <h3>Akihabara, Tokyo</h3>
+                        <p>Known as the anime and gaming capital of the world, Akihabara is a paradise for otaku culture. From multi-story anime merchandise stores to themed cafes, this vibrant district represents modern Japanese pop culture at its finest.</p>
+                    </div>
+                </div>
+                <div class="spot-card">
+                    <div class="spot-image">
+                        <a href="Images/Destinations/Japan/Fushimi-Inari.jpg">
+                            <img src="Images/Destinations/Japan/Fushimi-Inari.jpg" alt="Fushimi Inari Shrine">
+                        </a>
+                    </div>
+                    <div class="spot-content">
+                        <h3>Fushimi Inari Shrine, Kyoto</h3>
+                        <p>Famous for its thousands of vermilion torii gates that create tunnels along the mountain paths, this shrine offers a mystical journey through sacred grounds. The hike to the summit provides both spiritual connection and breathtaking views of Kyoto.</p>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <a class="btn" href="#Top-header" style="float: right;">Go to top</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

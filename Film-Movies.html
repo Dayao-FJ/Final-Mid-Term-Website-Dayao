@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Film Series</title>
+    <link rel="stylesheet" type="text/css" href="CSS files/Overall-Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .film-meta-item {
+            background-color: #f0eee9;
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .film-rating {
+            color: #49225B;
+            margin-top: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        
+        .film-content {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .film-left-column {
+            flex: 0 0 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .film-right-column {
+            flex: 1;
+        }
+        
+        .film-poster {
+            flex: 0 0 250px;
+        }
+        
+        .film-poster img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .film-review-text {
+            flex: 1;
+        }
+        
+        .film-video-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .film-video-container video {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .film-actors {
+            margin-top: 20px;
+            text-align: left;
+            width: 100%;
+        }
+        
+        .film-actors h4 {
+            color: #49225B;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "Libre Baskerville", serif;
+        }
+        
+        .film-actors ul {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+        
+        .film-actors li {
+            padding: 4px 0;
+            border-bottom: 1px dotted #e0e0e0;
+            font-size: 0.9rem;
+        }
+        
+        .film-actors li:last-child {
+            border-bottom: none;
+        }
+        
+        .trailer-btn {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: #49225B;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .trailer-btn:hover {
+            background-color: #7B3FA0;
+        }
+        
+        .trailer-btn i {
+            margin-right: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .film-content {
+                flex-direction: column;
+            }
+            
+            .film-left-column {
+                flex: 0 0 auto;
+                margin: 0 auto 20px;
+            }
+            
+            .film-poster {
+                flex: 0 0 auto;
+                max-width: 300px;
+                margin: 0 auto 20px;
+            }
+            
+            .film-video-container video {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<div class="header" id="Top-header">
+    <div class="buttons">
+        <a href="index.html" class="btn" title="Home">
+            <i class="fas fa-home btn-icon"></i>
+            <span>Home</span>
+        </a>
+        <a href="About-Me.html" class="btn" title="About Me">
+            <i class="fas fa-user btn-icon"></i>
+            <span>About</span>
+        </a>
+        <a href="Skills-Interest-Hobbies.html" class="btn" title="Skills">
+            <i class="fas fa-brain btn-icon"></i>
+            <span>Skills</span>
+        </a>
+        <a href="Resume.html" class="btn" title="Resume">
+            <i class="fas fa-file-alt btn-icon"></i>
+            <span>Resume</span>
+        </a>
+        <a href="Photo-Gallery.html" class="btn" title="Gallery">
+            <i class="fas fa-images btn-icon"></i>
+            <span>Gallery</span>
+        </a>
+        <a href="My-Beats.html" class="btn" title="Music">
+            <i class="fas fa-music btn-icon"></i>
+            <span>Beats</span>
+        </a>
+        <a href="Film-Movies.html" class="btn active" title="Movies">
+            <i class="fas fa-film btn-icon"></i>
+            <span>Movies</span>
+        </a>
+        <a href="Film-Series.html" class="btn" title="Series">
+            <i class="fas fa-tv btn-icon"></i>
+            <span>Series</span>
+        </a>
+        <a href="Dream-Vacation.html" class="btn" title="Destinations">
+            <i class="fas fa-plane btn-icon"></i>
+            <span>Dreams</span>
+        </a>
+        <a href="Bucket-List.html" class="btn" title="Bucket List">
+            <i class="fas fa-list-check btn-icon"></i>
+            <span>Bucket</span>
+        </a>
+    </div>
+</div>
+
+<body>
+    <div>
+        <h1>My Favorite Film Movies</h1>
+    </div>
+
+    <br>
+    <br>
+
+    <div style="display: flex; justify-content: center; align-items: center; gap: 35px;">
+        <a href="#Sherlock-Holmes" class="btn" title="Sherlock">
+            <i class="fas fa-magnifying-glass"></i> Sherlock Holmes
+        </a>
+        <a href="#Detective-Conan" class="btn" title="Detective Conan">
+            <i class="fas fa-child"></i> Detective Conan
+        </a>
+        <a href="#Marvels" class="btn" title="Marvels">
+            <i class="fas fa-mask"></i> Marvel Universe
+        </a>        
+    </div>
+
+    <div class="hero-image-container">
+        <a href="Images/movie.jpg">
+            <img src="Images/movie.jpg" alt="Collection of Francis's photos through the years" class="hero-image">
+        </a>
+    </div>  
+
+    <br>
+    <br>
+    <br>
+
+    <div align="left">
+        <hr style="height:2px;border-width:0;color:#3D1C4E;background-color:#3D1C4E">
+        <h2 id="Sherlock-Holmes">Sherlock Holmes</h2>
+        <hr style="height:2px;border-width:0;color:#3D1C4E;background-color:#3D1C4E">
+    </div>
+
+    <div align="justify">
+        <blockquote>
+            <blockquote>
+                <div class="film-content">
+                    <div class="film-left-column">
+                        <div class="film-poster">
+                            <a href="Images/sherlock-poster.jpg">
+                                <img src="Images/sherlock-poster.jpg" alt="Sherlock Holmes Movie Poster">
+                            </a>
+                        </div>
+                        <div class="film-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Genre:</strong> Mystery/Action
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Year:</strong> 2009-2011
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Director:</strong> Guy Ritchie
+                        </div>
+                        <div class="film-actors">
+                            <h4>Star Actors</h4>
+                            <ul>
+                                <li>Robert Downey Jr.</li>
+                                <li>Jude Law</li>
+                                <li>Rachel McAdams</li>
+                                <li>Mark Strong</li>
+                                <li>Eddie Marsan</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="film-right-column">
+                        <div class="film-video-container">
+                            <video controls width="640">
+                                <source src="Video Clips/Sherlock Holmes.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="film-review-text">
+                            <p>Sherlock Holmes, one of the most iconic fictional detectives, has been adapted into numerous films and television series over the decades. Since the 1990s, various filmmakers have reimagined Sir Arthur Conan Doyle's famous character in different styles, ranging from classic detective stories to action-packed blockbusters.</p>
+                            
+                            <p>These adaptations not only keep Holmes relevant to modern audiences but also showcase the versatility of the character in different cinematic approaches. The 1990s saw a mix of traditional and experimental takes on Sherlock Holmes. The made-for-TV movies starring Jeremy Brett, such as The Case-Book of Sherlock Holmes (1991), carried on the legacy of the faithful Granada Television adaptations that began in the 1980s.</p>
+                            
+                            <p>Brett's portrayal is considered one of the most accurate representations of Holmes, staying true to Doyle's original vision. However, other adaptations of the era sought to modernize or add unique twists to the detective's stories.</p>
+                            
+                            <p>In the 2000s, Sherlock Holmes received a blockbuster revival with the release of Sherlock Holmes (2009) and its sequel, Sherlock Holmes: A Game of Shadows (2011), directed by Guy Ritchie and starring Robert Downey Jr. and Jude Law. These films reimagined Holmes as a physically adept, eccentric genius, blending mystery with high-energy action sequences. This version of Holmes appealed to a global audience, introducing a new generation to the character while maintaining key elements of his detective skills and wit.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a class="btn" href="#Top-header" style="float: right;">Go to top</a>
+            </blockquote>
+        </blockquote>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div align="left">
+        <hr style="height:2px;border-width:0;color:#3D1C4E;background-color:#3D1C4E">
+        <h2 id="Detective-Conan">Detective Conan Movies</h2>
+        <hr style="height:2px;border-width:0;color:#3D1C4E;background-color:#3D1C4E">
+    </div>
+
+    <div align="justify">
+        <blockquote>
+            <blockquote>
+                <div class="film-content">
+                    <div class="film-left-column">
+                        <div class="film-poster">
+                            <a href="Images/detective-conan-poster.jpg">
+                                <img src="Images/detective-conan-poster.jpg" alt="Detective Conan Movie Poster">
+                            </a>
+                        </div>
+                        <div class="film-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Genre:</strong> Anime/Mystery
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Year:</strong> 1997-2024
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Creator:</strong> Gosho Aoyama
+                        </div>
+                        <div class="film-actors">
+                            <h4>Voice Actors</h4>
+                            <ul>
+                                <li>Minami Takayama</li>
+                                <li>Wakana Yamazaki</li>
+                                <li>Rikiya Koyama</li>
+                                <li>Kappei Yamaguchi</li>
+                                <li>Megumi Hayashibara</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="film-right-column">
+                        <div class="film-video-container">
+                            <video controls width="640">
+                                <source src="Video Clips/Detective-Conan-Movie-27-Trailer.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="film-review-text">
+                            <p>The influence of Sherlock Holmes extends beyond Western cinema, significantly shaping Japanese detective fiction as well. One of the most notable examples is Detective Conan (also known as Case Closed), a long-running anime and manga series created by Gosho Aoyama.</p>
+                            
+                            <p>Heavily inspired by Holmes, the series follows Shinichi Kudo, a teenage detective who is transformed into a child after being poisoned. Under the alias Conan Edogawa, he continues solving intricate mysteries while searching for the secret organization behind his transformation.</p>
+                            
+                            <p>Since its first film in 1997, the Detective Conan franchise has released a series of successful movies, each featuring thrilling cases, high-stakes action, and intelligent deductions reminiscent of Sherlock Holmes' investigative methods. The latest entry, Detective Conan: The Million-dollar Pentagram (2024), marks the 27th installment in the film series. This movie promises a gripping mystery involving a historical treasure, intricate clues, and the trademark mind games that make Detective Conan movies so engaging.</p>
+                            
+                            <p>Much like Sherlock Holmes, Conan relies on logic, keen observation, and deduction to solve cases, often confronting formidable adversaries in the process. The evolution of Detective Conan movies showcases how the detective genre remains relevant across different cultures and storytelling traditions. By combining classic mystery elements with modern cinematic techniques, the franchise continues to draw audiences both in Japan and globally.</p>
+                            
+                            <p>Both Sherlock Holmes and Detective Conan prove that the essence of great detective fiction lies in the ability to challenge the audience's intellect while delivering compelling narratives. As long as there are mysteries to solve, these legendary detectives will continue to inspire future generations of filmmakers and storytellers.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a class="btn" href="#Top-header" style="float: right;">Go to top</a>
+            </blockquote>
+        </blockquote>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div align="left">
+        <hr style="height:2px;border-width:0;color:#3D1C4E;background-color:#3D1C4E">
+        <h2 id="Marvels">Marvel Cinematic Universe</h2>
+        <hr style="height:2px;border-width:0;color:#3D1C4E;background-color:#3D1C4E">
+    </div>
+
+    <div align="justify">
+        <blockquote>
+            <blockquote>
+                <div class="film-content">
+                    <div class="film-left-column">
+                        <div class="film-poster">
+                            <a href="Images/marvel-poster.webp">
+                                <img src="Images/marvel-poster.webp" alt="Marvel Cinematic Universe Poster">
+                            </a>
+                        </div>
+                        <div class="film-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Genre:</strong> Superhero/Action
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Year:</strong> 2008-Present
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Directors:</strong> Various
+                        </div>
+                        <div class="film-actors">
+                            <h4>Star Actors</h4>
+                            <ul>
+                                <li>Robert Downey Jr.</li>
+                                <li>Chris Evans</li>
+                                <li>Scarlett Johansson</li>
+                                <li>Chris Hemsworth</li>
+                                <li>Mark Ruffalo</li>
+                                <li>Ryan Reynolds</li>
+                                <li>Hugh Jackman</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="film-right-column">
+                        <div class="film-video-container">
+                            <video controls width="640">
+                                <source src="Video Clips/Deadpool-Dancing-Scene.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="film-review-text">
+                            <p>The Marvel Cinematic Universe (MCU) has become one of the most influential and successful franchises in cinematic history. Since its inception with Iron Man (2008), the MCU has evolved into an interconnected web of superhero stories, bringing iconic comic book characters to life on the big screen.</p>
+                            
+                            <p>With each new phase, Marvel Studios continues to expand its universe, introducing new heroes, revisiting old ones, and experimenting with different storytelling styles to keep audiences engaged. One of the most highly anticipated upcoming releases is Deadpool & Wolverine (2024), a film that marks a significant shift in the MCU's direction.</p>
+                            
+                            <p>Since the conclusion of the Infinity Saga with Avengers: Endgame (2019), the MCU has explored multiversal storytelling, opening the doors to alternate realities and crossovers previously thought impossible. The acquisition of 20th Century Fox by Disney in 2019 played a crucial role in this evolution, allowing Marvel to integrate characters like the X-Men and the Fantastic Four into the MCU.</p>
+                            
+                            <p>Among these, Deadpool and Wolverine stand out as fan-favorite figures, making their MCU debut all the more exciting.</p>                        </div>
+                    </div>
+                </div>
+                
+                <a class="btn" href="#Top-header" style="float: right;">Go to top</a>
+            </blockquote>
+        </blockquote>
+    </div>
+</body>
+
+</html>

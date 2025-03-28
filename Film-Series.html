@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Film Series</title>
+    <link rel="stylesheet" type="text/css" href="CSS files/Overall-Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .film-meta-item {
+            background-color: #f0eee9;
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .film-rating {
+            color: #49225B;
+            margin-top: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        
+        .film-content {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .film-left-column {
+            flex: 0 0 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .film-right-column {
+            flex: 1;
+        }
+        
+        .film-poster {
+            flex: 0 0 250px;
+        }
+        
+        .film-poster img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .film-review-text {
+            flex: 1;
+        }
+        
+        .film-video-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .film-video-container video {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .film-actors {
+            margin-top: 20px;
+            text-align: left;
+            width: 100%;
+        }
+        
+        .film-actors h4 {
+            color: #49225B;
+            margin-bottom: 10px;
+            text-align: center;
+            font-family: "Libre Baskerville", serif;
+        }
+        
+        .film-actors ul {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+        
+        .film-actors li {
+            padding: 4px 0;
+            border-bottom: 1px dotted #e0e0e0;
+            font-size: 0.9rem;
+        }
+        
+        .film-actors li:last-child {
+            border-bottom: none;
+        }
+        
+        @media (max-width: 768px) {
+            .film-content {
+                flex-direction: column;
+            }
+            
+            .film-left-column {
+                flex: 0 0 auto;
+                margin: 0 auto 20px;
+            }
+            
+            .film-poster {
+                flex: 0 0 auto;
+                max-width: 300px;
+                margin: 0 auto 20px;
+            }
+            
+            .film-video-container video {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<div class="header" id="Top-header">
+    <div class="buttons">
+        <a href="index.html" class="btn" title="Home">
+            <i class="fas fa-home btn-icon"></i>
+            <span>Home</span>
+        </a>
+        <a href="About-Me.html" class="btn" title="About Me">
+            <i class="fas fa-user btn-icon"></i>
+            <span>About</span>
+        </a>
+        <a href="Skills-Interest-Hobbies.html" class="btn" title="Skills">
+            <i class="fas fa-brain btn-icon"></i>
+            <span>Skills</span>
+        </a>
+        <a href="Resume.html" class="btn" title="Resume">
+            <i class="fas fa-file-alt btn-icon"></i>
+            <span>Resume</span>
+        </a>
+        <a href="Photo-Gallery.html" class="btn" title="Gallery">
+            <i class="fas fa-images btn-icon"></i>
+            <span>Gallery</span>
+        </a>
+        <a href="My-Beats.html" class="btn" title="Music">
+            <i class="fas fa-music btn-icon"></i>
+            <span>Beats</span>
+        </a>
+        <a href="Film-Movies.html" class="btn" title="Movies">
+            <i class="fas fa-film btn-icon"></i>
+            <span>Movies</span>
+        </a>
+        <a href="Film-Series.html" class="btn active" title="Series">
+            <i class="fas fa-tv btn-icon"></i>
+            <span>Series</span>
+        </a>
+        <a href="Dream-Vacation.html" class="btn" title="Destinations">
+            <i class="fas fa-plane btn-icon"></i>
+            <span>Dreams</span>
+        </a>
+        <a href="Bucket-List.html" class="btn" title="Bucket List">
+            <i class="fas fa-list-check btn-icon"></i>
+            <span>Bucket</span>
+        </a>
+    </div>
+</div>
+
+<body>
+    <div>
+        <h1>My Favorite Film Series</h1>
+    </div>
+
+    <br>
+    <br>
+
+    <div style="display: flex; justify-content: center; align-items: center; gap: 35px;">
+        <a href="#The-Big-Bang" class="btn" title="TBBT">
+            <i class="fas fa-atom"></i> The Big Bang Theory
+        </a>
+        <a href="#Nekomonogatari-Series" class="btn" title="Nekomono">
+            <i class="fas fa-cat"></i> Nekomonogatari
+        </a>
+        <a href="#Bakemonogatari-Series" class="btn" title="Bakemono">
+            <i class="fas fa-ghost"></i> Bakemonogatari
+        </a>        
+    </div>
+
+    <div class="hero-image-container">
+        <a href="Images/series.jpg">
+            <img src="Images/series.jpg" alt="Collection of Francis's photos through the years" class="hero-image">
+        </a>
+    </div>  
+
+    <br>
+    <br>
+    <br>
+
+    <div align="left">
+        <hr style="height:2px;border-width:0;color:#3D1C4E;background-color:#3D1C4E">
+        <h2 id="The-Big-Bang">The Big Bang Theory</h2>
+        <hr style="height:2px;border-width:0;color:#3D1C4E;background-color:#3D1C4E">
+    </div>
+
+    <div align="justify">
+        <blockquote>
+            <blockquote>
+                <div class="film-content">
+                    <div class="film-left-column">
+                        <div class="film-poster">
+                            <a href="Images/big-bang-theory-poster.webp">
+                                <img src="Images/big-bang-theory-poster.webp" alt="The Big Bang Theory Poster">
+                            </a>
+                        </div>
+                        <div class="film-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Genre:</strong> Comedy/Sitcom
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Years:</strong> 2007-2019
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Creator:</strong> Chuck Lorre
+                        </div>
+                        <div class="film-actors">
+                            <h4>Star Actors</h4>
+                            <ul>
+                                <li>Jim Parsons</li>
+                                <li>Johnny Galecki</li>
+                                <li>Kaley Cuoco</li>
+                                <li>Simon Helberg</li>
+                                <li>Kunal Nayyar</li>
+                                <li>Mayim Bialik</li>
+                                <li>Melissa Rauch</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="film-right-column">
+                        <div class="film-video-container">
+                            <video controls width="640">
+                                <source src="Video Clips/The Big Bang Theory.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="film-review-text">
+                            <p>The Big Bang Theory is a hilarious sitcom that follows the lives of nerdy scientists and their quirky friends. The series mainly revolves around Sheldon Cooper, Leonard Hofstadter, Howard Wolowitz, and Rajesh Koothrappali.</p>
+                            
+                            <p>Sheldon, played by Jim Parsons, is known for his genius intellect and eccentric personality. Leonard is Sheldon's best friend, constantly dealing with his roommate's odd behavior. Howard's smooth-talking antics and Raj's struggles with social anxiety add even more comedy to the show.</p>
+                            
+                            <p>One of the series' highlights is Penny, the charming neighbor who brings warmth and balance to the group's geeky world. Throughout its 12 seasons, the show brilliantly blends science, friendship, and love.</p>
+                            
+                            <p>Memorable episodes like "The Einstein Approximation" showcase Sheldon's hilarious yet intense dedication to physics. The show's witty dialogues and nerd culture references make it highly relatable to science enthusiasts. For me, The Big Bang Theory isn't just a comedy — it's a celebration of friendship and embracing one's quirks.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a class="btn" href="#Top-header" style="float: right;">Go to top</a>
+            </blockquote>
+        </blockquote>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div align="left">
+        <hr style="height:2px;border-width:0;color:#3D1C4E;background-color:#3D1C4E">
+        <h2 id="Nekomonogatari-Series">Nekomonogatari</h2>
+        <hr style="height:2px;border-width:0;color:#3D1C4E;background-color:#3D1C4E">
+    </div>
+
+    <div align="justify">
+        <blockquote>
+            <blockquote>
+                <div class="film-content">
+                    <div class="film-left-column">
+                        <div class="film-poster">
+                            <a href="Images/nekomonogatari-poster.jpg">
+                                <img src="Images/nekomonogatari-poster.jpg" alt="Nekomonogatari Poster">
+                            </a>
+                        </div>
+                        <div class="film-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Genre:</strong> Anime/Supernatural
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Year:</strong> 2012
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Studio:</strong> Shaft
+                        </div>
+                        <div class="film-actors">
+                            <h4>Voice Actors</h4>
+                            <ul>
+                                <li>Hiroshi Kamiya</li>
+                                <li>Yui Horie</li>
+                                <li>Chiwa Saito</li>
+                                <li>Eri Kitamura</li>
+                                <li>Maaya Sakamoto</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="film-right-column">
+                        <div class="film-video-container">
+                            <video controls width="640">
+                                <source src="Video Clips/Black-Hanekawa-Monogatari-Series.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="film-review-text">
+                            <p>The Monogatari series, created by Nisio Isin and adapted into an anime by studio Shaft, is a unique and complex work that has captivated audiences worldwide. Unlike conventional anime, Monogatari is deeply rooted in its dialogue-heavy narrative, intricate character development, and abstract visual storytelling.</p>
+                            
+                            <p>It is a series that challenges its viewers with philosophical themes, wordplay, and an unconventional storytelling approach, making it one of the most distinctive works in modern anime. At the core of Monogatari is Koyomi Araragi, a high school student who, after encountering a vampire, finds himself entangled in various supernatural phenomena affecting the people around him.</p>
+                            
+                            <p>Each arc in the series introduces new characters struggling with oddities, which are supernatural manifestations of their inner struggles, traumas, or psychological burdens. This blending of the supernatural with deeply human conflicts creates an engaging narrative that is both entertaining and thought-provoking.</p>
+                            
+                            <p>One of the most remarkable aspects of Monogatari is its use of dialogue. The series relies heavily on witty, rapid-fire conversations filled with puns, metaphors, and philosophical musings. These conversations not only serve as a means of character development but also challenge the audience to think critically about the themes presented, such as identity, love, morality, and self-worth. The series often plays with perspective, giving different characters unique ways of interpreting the same events, adding layers of depth to the storytelling.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a class="btn" href="#Top-header" style="float: right;">Go to top</a>
+            </blockquote>
+        </blockquote>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div align="left">
+        <hr style="height:2px;border-width:0;color:#3D1C4E;background-color:#3D1C4E">
+        <h2 id="Bakemonogatari-Series">Bakemonogatari</h2>
+        <hr style="height:2px;border-width:0;color:#3D1C4E;background-color:#3D1C4E">
+    </div>
+
+    <div align="justify">
+        <blockquote>
+            <blockquote>
+                <div class="film-content">
+                    <div class="film-left-column">
+                        <div class="film-poster">
+                            <a href="Images/bakemonogatari-poster.jpg">
+                                <img src="Images/bakemonogatari-poster.jpg" alt="Bakemonogatari Poster">
+                            </a>
+                        </div>
+                        <div class="film-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Genre:</strong> Anime/Supernatural
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Year:</strong> 2009
+                        </div>
+                        <div class="film-meta-item">
+                            <strong>Studio:</strong> Shaft
+                        </div>
+                        <div class="film-actors">
+                            <h4>Voice Actors</h4>
+                            <ul>
+                                <li>Hiroshi Kamiya</li>
+                                <li>Chiwa Saito</li>
+                                <li>Emiri Katou</li>
+                                <li>Yui Horie</li>
+                                <li>Miyuki Sawashiro</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="film-right-column">
+                        <div class="film-video-container">
+                            <video controls width="640">
+                                <source src="Video Clips/Senjougahara-Confession-Monogatari-Series.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        
+                        <div class="film-review-text">
+                            <p>Visually, Monogatari stands out due to Shaft's signature animation style, which incorporates abstract imagery, exaggerated camera angles, and symbolic visuals. These artistic choices enhance the surreal nature of the series, immersing viewers in a world where reality and illusion often blend.</p>
+                            
+                            <p>The use of striking color palettes and minimalist settings further amplifies the psychological aspects of the story, making every frame a carefully constructed visual experience. Another defining trait of Monogatari is its unconventional narrative structure.</p>
+                            
+                            <p>The story is not presented in chronological order, forcing viewers to piece together the timeline as they progress through the series. This non-linear storytelling method adds a level of engagement, encouraging audiences to actively analyze character motivations and story developments.</p>
+                            
+                            <p>Beyond its stylistic uniqueness, Monogatari is also deeply emotional. Many arcs delve into sensitive topics such as abuse, depression, and personal trauma, portraying them in a way that resonates with viewers. The character interactions, while often comedic and eccentric, also hold genuine moments of vulnerability and introspection, making them feel real and relatable despite the supernatural backdrop.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a class="btn" href="#Top-header" style="float: right;">Go to top</a>
+                <br>
+                <br>
+                <a class="btn" href="index.html" style="float: right;">Home</a>
+            </blockquote>
+        </blockquote>
+    </div>
+</body>
+
+</html>
